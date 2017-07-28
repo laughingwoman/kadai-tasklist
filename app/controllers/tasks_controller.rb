@@ -51,6 +51,12 @@ class TasksController < ApplicationController
  private
 
   # Strong Parameter
+  
+   def set_message
+    @message = Message.find(params[:id])
+   end
+
+  
   def task_params
     params.require(:task).permit(:content)
   end
